@@ -12,29 +12,10 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://ayush2782005_db_user:<db_password>@ncrfurniture.veknwry.mongodb.net/?appName=NCRFURNITURE";
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
-// Contact Route
+mongoose.connect("mongodb://127.0.0.1:27017/livspace")
+  .then(() => console.log("MongoDB Connected ✅"))
+  .catch((err) => console.log(err));
+Contact Route
 app.post("/contact", async (req, res) => {
   console.log("New Contact Form Data:", req.body);
 

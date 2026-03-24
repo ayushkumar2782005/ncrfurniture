@@ -1,8 +1,8 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Designs from "./components/Designs";
-import Contact from "./components/Contact";
-import Info from "./pages/Info";
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Designs from "./components/Designs.jsx";
+import Contact from "./components/Contact.jsx";
+import Info from "./pages/Info.jsx";
 
 import { Routes, Route } from "react-router-dom";
 

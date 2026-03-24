@@ -1,23 +1,16 @@
 app.post("/contact", async (req, res) => {
   try {
-    const newContact = new Contact({
-      name: req.body.name,
-      email: req.body.email,
-      message: req.body.message,
-    });
+    console.log("Contact Form Data:", req.body);
 
-    await newContact.save();
-
-    console.log("Saved in DB:", req.body);
-
+    // No DB — just simulate success
     res.json({
-      message: "Saved to database ✅",
+      message: "Form received successfully ✅",
     });
 
   } catch (error) {
     console.log(error);
     res.status(500).json({
-      error: "Error saving data ❌",
+      error: "Error processing request ❌",
     });
   }
 });
